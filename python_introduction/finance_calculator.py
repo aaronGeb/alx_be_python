@@ -2,9 +2,9 @@
 # personal finance calculator
 
 monthly_income = int(input("Enter your monthly income: "))  # get monthly income
-monthly_exp = int(input("Enter your monthly expenses:"))
+monthly_expenses = int(input("Enter your monthly expenses:"))
 
-monthly_savings = monthly_income - monthly_exp  # calculate monthly savings
+monthly_savings = monthly_income - monthly_expenses  # calculate monthly savings
 annual_savings = monthly_savings * 12 + (
     monthly_savings * 12 * 0.05
 )  # calculate annual savings
