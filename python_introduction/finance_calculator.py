@@ -8,5 +8,5 @@ monthly_savings = monthly_income - monthly_exp  # calculate monthly savings
 annual_savings = monthly_savings * 12 + (
     monthly_savings * 12 * 0.05
 )  # calculate annual savings
-print(f"Your monthly savings are: ${monthly_savings}")
-print(f"Projected saving after onr year, with interest, is: ${annual_savings}")
+print(f"Your monthly savings are: ${monthly_savings}.")
+print(f"Projected saving after onr year, with interest, is: ${int(annual_savings)}.")
