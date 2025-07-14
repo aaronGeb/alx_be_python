@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # personal daily reminder script
-Task = input("Enter your task:")
-Priority = input("Priority (high, medium, low):")
+task = input("Enter your task:")
+priority = input("Priority (high, medium, low):")
 time_bound = input("Is it time bound (yes or no):")
 match priority:
     case "high":
