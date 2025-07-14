@@ -2,7 +2,7 @@
 # personal daily reminder script
 description = input("Enter your task:")
 priority = input("Priority (high/medium/low):")
-time_bound = input("Is it time-bound? (yesno):")
+time_bound = input("Is it time-bound? (yes/no):")
 match priority:
     case "high":
         reminder = f"Reminder: {description} is a {priority} priority"
