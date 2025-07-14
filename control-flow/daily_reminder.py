@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # personal daily reminder script
-description = input("Enter your description:")
+description = input("Enter your task:")
 priority = input("Priority (high, medium, low):")
-time_bound = input("Is it time bound (yes or no):")
+time_bound = input("Is it time-bound (yes or no):")
 match priority:
     case "high":
         reminder = f"Reminder: {description} is a high priority description"
