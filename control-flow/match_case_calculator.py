@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # match case calculator
-num1, num2 = map(int,input("Enter two numbers: ").split())
+#num1, num2 = map(int,input("Enter two numbers: ").split())
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
 operation = input("Enter operation (+, -, *, /): ")
 match operation:
     case "+":
