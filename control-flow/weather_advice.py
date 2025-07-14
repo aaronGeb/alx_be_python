@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # weather advice based on conditions
-weather = input("What's the weather like today?").lower()
+weather = input("What's the weather like today? (sunny/rainy/cold):")
 if weather == "rainy":
     print("Don't forget your umbrella and a raincoat.")
 elif weather == "sunny":
