@@ -6,9 +6,9 @@ time_bound = input("Is it time-bound? (yes/no):")
 match priority:
     case "high":
       reminder = f"Reminder: {description} is a high priority"
-      if time_bound.lower() == "yes":
+      if time_bound == "yes":
           reminder += " task that requires immediate attention!"
-      elif time_bound.lower() == "no":
+      elif time_bound == "no":
           reminder += ". Consider completing it when you have free time"
           reminder = f"Reminder: {description} is a high priority description"
     case "medium" | "low":
