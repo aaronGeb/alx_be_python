@@ -9,7 +9,7 @@ match priority:
     case "medium" | "low":
         reminder = f"Note: {description} is a {priority} priority task"
         
-if time_bound.lower() == "yes":
+if time_bound == "yes":
     reminder += " task that requires immediate attention today!"
 else:
     reminder += ". Consider completing it when you have free time"
