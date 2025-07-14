@@ -6,4 +6,5 @@ while i <= length:
     for _ in range(length):
         i += 1
         print("*" * length)
+        print()
   
