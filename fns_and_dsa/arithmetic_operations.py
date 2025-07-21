@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def peform_operation(num1: float, num2: float, operation: str) -> float:
+def perform_operation(num1: float, num2: float, operation: str) -> float:
     """
     Perform arithmetic operations based on the provided operation type.
 
