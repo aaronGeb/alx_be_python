@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Shopping List Manager"""
 
-
 def display_menu():
     print("Shopping List Manager")
     print("1. Add Item")
@@ -14,7 +13,7 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = input("Enter your choice: ")
+        choice = input("Enter the item to add:")
 
         if choice == "1":
             items = input("Enter the item you want to add: ")
