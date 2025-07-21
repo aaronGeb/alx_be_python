@@ -31,8 +31,8 @@ def main():
         elif choice == "3":
             if shopping_list:
                 print("Shopping List:")
-                for item in shopping_list:
-                    print(f"- {item}")
+                for index, item in enumerate(shopping_list, start=1):
+                    print(f"{index}. {item}")
             else:
                 print("Your shopping list is empty.")
         elif choice == "4":
