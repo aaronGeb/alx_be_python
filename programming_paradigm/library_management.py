@@ -5,43 +5,39 @@ It includes functionality to add books, check them out, and return them.
 
 
 class Book:
-    def __init__(self, title, author, is_checked_out=False):
+    def __init__(self, title, author):
         """Initialize a book with a title, author, and checked-out status."""
         self.title = title
         self.author = author
-        self.__is_checked_out = is_checked_out
+        self._is_checked_out = False
 
-    def is_checked_out(self):
-        """Check if the book is currently checked out."""
-        return self.__is_checked_out
+    def checked_out(self):
+        """Return True if the book is currently checked out, else False."""
+        return self._is_checked_out
 
-    def return_book(self):
-        """Return the book, marking it as not checked out."""
-        self.__is_checked_out = False
-
-    def set_checked_out(self, checked_out):
+    def set_checked_out(self, status):
         """Set the checked-out status of the book."""
-        self.__is_checked_out = checked_out
+        self._is_checked_out = status
 
 
 class Library:
     def __init__(self):
         """Initialize a library with an empty list of books."""
-        self.__books = []
+        self._books = []
 
     def add_book(self, book):
         """Add a book to the library."""
-        self.__books.append(book)
+        self._books.append(book)
 
     def check_out_book(self, title):
         """
         Check out a book from the library by title.
         If the book is available, mark it as checked out.
         """
-        for book in self.__books:
-            if book.title == title and not book.is_checked_out():
+        for book in self._books:
+            if book.title == title and not book.checked_out():
                 book.set_checked_out(True)
-                print(f"Checked out: {book.title}")
+                # print(f"Checked out: {book.title}")
                 return
         print(f"Book '{title}' is not available for checkout.")
 
@@ -50,10 +46,10 @@ class Library:
         Return a book to the library by title.
         If the book is checked out, mark it as returned.
         """
-        for book in self.__books:
-            if book.title == title and book.is_checked_out():
+        for book in self._books:
+            if book.title == title and book.checked_out():
                 book.set_checked_out(False)
-                print(f"Returned: {book.title}")
+                # print(f"Returned: {book.title}")
                 return
         print(f"Book '{title}' is not available for return.")
 
@@ -61,7 +57,7 @@ class Library:
         """
         List all books that are currently available (not checked out).
         """
-        available_books = [book for book in self.__books if not book.is_checked_out()]
+        available_books = [book for book in self._books if not book.checked_out()]
         if available_books:
             for book in available_books:
                 print(f"{book.title} by {book.author}")
