@@ -19,6 +19,10 @@ class Book:
         """Return the book, marking it as not checked out."""
         self.__is_checked_out = False
 
+    def set_checked_out(self, checked_out):
+        """Set the checked-out status of the book."""
+        self.__is_checked_out = checked_out
+
 
 class Library:
     def __init__(self):
@@ -31,32 +35,33 @@ class Library:
 
     def check_out_book(self, title):
         """
-        This function checks out a book from the library.
-
-        Args:
-            title (_type_): _description_
+        Check out a book from the library by title.
+        If the book is available, mark it as checked out.
         """
         for book in self.__books:
-            if book.title == title and not book._Book__is_checked_out:
-                book._Book__is_checked_out = True
+            if book.title == title and not book.is_checked_out():
+                book.set_checked_out(True)
                 print(f"Checked out: {book.title}")
                 return
         print(f"Book '{title}' is not available for checkout.")
 
     def return_book(self, title):
-        """Return a book to the library."""
+        """
+        Return a book to the library by title.
+        If the book is checked out, mark it as returned.
+        """
         for book in self.__books:
-            if book.title == title and book._Book__is_checked_out:
-                book._Book__is_checked_out = False
+            if book.title == title and book.is_checked_out():
+                book.set_checked_out(False)
                 print(f"Returned: {book.title}")
                 return
         print(f"Book '{title}' is not available for return.")
 
     def list_available_books(self):
-        """List all available books in the library."""
-        available_books = [
-            book for book in self.__books if not book._Book__is_checked_out
-        ]
+        """
+        List all books that are currently available (not checked out).
+        """
+        available_books = [book for book in self.__books if not book.is_checked_out()]
         if available_books:
             for book in available_books:
                 print(f"{book.title} by {book.author}")
