@@ -11,7 +11,7 @@ class Book:
         self.author = author
         self._is_checked_out = False
 
-    def checked_out(self):
+    def check_out(self):
         """Return True if the book is currently checked out, else False."""
         return self._is_checked_out
 
