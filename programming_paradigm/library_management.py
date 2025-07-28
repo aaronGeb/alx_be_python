@@ -12,7 +12,7 @@ class Book:
         self._is_checked_out = False
 
     def is_checked_out(self):
-        """Return True if the book is currently checked out, else False."""
+        """Return True if the book is currently checked out"""
         return self._is_checked_out
 
     def check_out(self):
@@ -23,7 +23,7 @@ class Book:
         return False
 
     def return_book(self):
-        """Return True if the book is currently checked out"""
+        """Return True if the book is successfully returned"""
         if self._is_checked_out:
             self._is_checked_out = False
             return True
@@ -31,6 +31,7 @@ class Book:
         return False
 
     def __str__(self):
+        """Return a string representation of the book."""
         status = "Available" if self._is_checked_out else "Checked Out"
         return f"{self.title} by {self.author} - {status}"
 
