@@ -14,7 +14,7 @@ class BankAccount:
         self.account_balance += amount
 
     def withdraw(self, amount):
-        """Withdraw money from the account if sufficient funds are available."""
+        """Withdraw money from the account if sufficient funds are available in the account."""
         if self.account_balance >= amount:
             self.account_balance -= amount
             return True
