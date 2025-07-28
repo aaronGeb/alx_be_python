@@ -15,6 +15,10 @@ class Book:
         """Check if the book is currently checked out."""
         return self.__is_checked_out
 
+    def return_book(self):
+        """Return the book, marking it as not checked out."""
+        self.__is_checked_out = False
+
 
 class Library:
     def __init__(self):
