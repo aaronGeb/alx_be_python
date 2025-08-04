@@ -19,7 +19,7 @@ class Book:
 
     def __repr__(self):
         """Return a detailed string representation of the book."""
-        return f"Book('{self.title}', '{self.author}', '{self.year}')"
+        return f"Book('{self.title}', '{self.author}', {self.year})"
 
     def __del__(self):
         print(f"Deleting {self.title}")
